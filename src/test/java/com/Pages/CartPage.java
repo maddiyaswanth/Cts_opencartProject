@@ -21,10 +21,9 @@ public class CartPage {
 	By addtocart = By.xpath("//*[@id=\"content\"]/div[2]/div[2]/div/div[2]/div[2]/button[1]/i");
 	By cart = By.xpath("//*[@id=\"top-links\"]/ul/li[4]/a/span");
 	By item = By.xpath("//*[@id=\"content\"]/form/div/table/tbody/tr/td[2]/a");
-	By product = By.xpath("//*[@id=\"content\"]/div[2]/div[1]/div/div[2]/div[1]/h4/a");
 	By Quantity = By.xpath("//*[@id=\"content\"]/form/div/table/tbody/tr/td[4]/div/input");
 	By button = By.xpath("//*[@id=\"content\"]/form/div/table/tbody/tr/td[4]/div/span/button[1]");
-	By product1 = By.xpath("//*[@id=\"content\"]/form/div/table/tbody/tr/td[2]/a");
+	By product = By.xpath("//*[@id=\"content\"]/form/div/table/tbody/tr/td[2]/a");
 	By text = By.xpath("//*[@id=\"content\"]/div/div[2]/h1");
 	By cancel = By.xpath("//*[@id=\"content\"]/form/div/table/tbody/tr/td[4]/div/span/button[2]/i");
 
@@ -64,7 +63,7 @@ public class CartPage {
 		driver.close();
 	}
 
-	public void login() {
+	public void login() throws InterruptedException {
 		driver.findElement(Myaccount).click();
 		WebElement link = driver.findElement(Myaccount);
 		WebElement link2 = driver.findElement(login);
@@ -75,13 +74,17 @@ public class CartPage {
 		driver.findElement(password).sendKeys("kiran123");
 		driver.findElement(loginbtn).click();
 		driver.findElement(cart).click();
+		Thread.sleep(5000);
 	}
 
-	public void assert1() {
+	public void assert1() throws InterruptedException {
 
 		String item1 = driver.findElement(item).getText();
-		driver.navigate().to("https://demo.opencart.com/index.php?route=product/category&path=24");
+		Thread.sleep(5000);
+		// driver.navigate().to("https://demo.opencart.com/index.php?route=product/category&path=24");
+		// Thread.sleep(5000);
 		String product1 = driver.findElement(product).getText();
+		//Thread.sleep(5000);
 		Assert.assertEquals(item1, product1);
 		driver.close();
 

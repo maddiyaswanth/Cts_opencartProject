@@ -69,6 +69,7 @@ public class Desktoppage {
 	public void wish() {
 		driver.findElement(product1).click();
 		driver.findElement(wishcomponent).click();
+		driver.close();
 	}
 
 }
