@@ -9,10 +9,14 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+
+
+
+
 public class ExcelPage {
 	public int row_count() throws IOException
 	{
-		FileInputStream fil=new FileInputStream(new File("D:\\Selenium\\OPENCARTPROJECT\\src\\test\\resources\\TestData\\excel.xlsx"));
+		FileInputStream fil=new FileInputStream(new File("F:\\cts\\Selenium\\selenium_exmpls\\OPENCARTPROJECT\\src\\test\\resources\\TestData\\excel.xlsx"));
 		XSSFWorkbook workbook=new XSSFWorkbook(fil);
 		XSSFSheet sheet=workbook.getSheet("Testdata");
 		int rowcount=sheet.getLastRowNum();
@@ -22,7 +26,7 @@ public class ExcelPage {
 	}
 	public String excel_emailid(int a) throws IOException
 	{
-		FileInputStream fil=new FileInputStream(new File("D:\\Selenium\\OPENCARTPROJECT\\src\\test\\resources\\TestData\\excel.xlsx"));
+		FileInputStream fil=new FileInputStream(new File("F:\\cts\\Selenium\\selenium_exmpls\\OPENCARTPROJECT\\src\\test\\resources\\TestData\\excel.xlsx"));
 		XSSFWorkbook workbook=new XSSFWorkbook(fil);
 		XSSFSheet sheet=workbook.getSheet("Testdata");
 		
@@ -35,7 +39,7 @@ public class ExcelPage {
 	
 	public String excel_password(int a) throws IOException
 	{
-		FileInputStream fil=new FileInputStream(new File("D:\\Selenium\\OPENCARTPROJECT\\src\\test\\resources\\TestData\\excel.xlsx"));
+		FileInputStream fil=new FileInputStream(new File("F:\\cts\\Selenium\\selenium_exmpls\\OPENCARTPROJECT\\src\\test\\resources\\TestData\\excel.xlsx"));
 		XSSFWorkbook workbook=new XSSFWorkbook(fil);
 		XSSFSheet sheet=workbook.getSheet("Testdata");
 		

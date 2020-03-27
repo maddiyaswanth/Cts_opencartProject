@@ -31,7 +31,7 @@ public class Registerandlogin {
 	By loginbtn = By.xpath("//*[@id=\"content\"]/div/div[2]/div/form/input");
 
 	public void url() { // url for launch the chrome
-		System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\PROJECT-CTS\\driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\cts\\Selenium\\selenium_exmpls\\OPENCARTPROJECT\\driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
@@ -44,6 +44,7 @@ public class Registerandlogin {
 		System.out.println(driver.getTitle());
 	}
 
+	// registering the accounts
 	public void Register() throws IOException {
 		driver.findElement(Myaccount).click();
 		driver.findElement(By.xpath("//*[@id=\"top-links\"]/ul/li[2]/ul/li[1]/a")).click();
@@ -56,11 +57,13 @@ public class Registerandlogin {
 		driver.findElement(terms).click();
 	}
 
+	// clicking submit button
 	public void submitbutton() throws InterruptedException {
 		driver.findElement(cont).click();
 		driver.close();// loging button
 	}
 
+	// checking the website with valid credentials
 	public void ValidLogiN() throws IOException {
 		driver.findElement(Myaccount).click();
 		// WebElement link =driver.findElement(Myaccount);
@@ -75,6 +78,7 @@ public class Registerandlogin {
 
 	}
 
+	// providing the data through excel sheet
 	public void Login(int a) throws IOException {
 		driver.findElement(Myaccount).click();
 		// WebElement link =driver.findElement(Myaccount);
@@ -98,6 +102,7 @@ public class Registerandlogin {
 		driver.close();
 	}
 
+	// checking the website with invalid login credentials
 	public void InvalidLogin() {
 		driver.findElement(Myaccount).click();
 		WebElement account = driver.findElement(Myaccount);
@@ -109,11 +114,13 @@ public class Registerandlogin {
 		driver.findElement(password).sendKeys("12345");
 	}
 
+	// clicking the login button
 	public void clickLogin() throws InterruptedException {
 		driver.findElement(loginbtn).click();
 		driver.close();
 	}
 
+	// providing only mandatory fields
 	public void MandatoryFields() throws IOException {
 		driver.findElement(Myaccount).click();
 		WebElement link = driver.findElement(Myaccount); // move to to element achiving by creating object
@@ -131,11 +138,13 @@ public class Registerandlogin {
 
 	}
 
+	// clicking submit button
 	public void submit() throws InterruptedException {
 		driver.findElement(cont).click();// loging button
 		driver.close();
 	}
 
+	// clicking login button
 	public void login() {
 		driver.findElement(Myaccount).click();
 		WebElement account = driver.findElement(Myaccount);
@@ -146,6 +155,7 @@ public class Registerandlogin {
 		driver.findElement(loginbtn).click();
 	}
 
+	// checking number of links in the page
 	public void Linksinthepage() {
 		driver.findElement(Email).sendKeys("kiran123@gmail.com");
 		driver.findElement(password).sendKeys("kiran123");

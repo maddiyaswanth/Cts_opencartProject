@@ -20,7 +20,7 @@ public class Desktoppage {
 	By wishcomponent = By.xpath("//*[@id=\"content\"]/div/div[2]/div[1]/button[1]/i");
 
 	public void url() { // url for launch the chrome
-		System.setProperty("webdriver.chrome.driver", "D:\\\\Selenium\\\\PROJECT-CTS\\\\driver\\\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\cts\\Selenium\\selenium_exmpls\\OPENCARTPROJECT\\driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
@@ -33,16 +33,19 @@ public class Desktoppage {
 		System.out.println(driver.getTitle());
 	}
 
+	// Selecting the desktop
 	public void desktopselect() {
 		driver.findElement(desktop).click();
 		driver.findElement(all).click();
 	}
 
+	// selecting the product we want from desktop list
 	public void item() {
 		driver.findElement(product).click();
 		driver.close();
 	}
 
+	// selecting the number of products we want
 	public void shownumbers() throws InterruptedException {
 		WebElement a = driver.findElement(numbers);
 		a.click();
@@ -53,6 +56,7 @@ public class Desktoppage {
 		driver.close();
 	}
 
+	// sorting the things to display in certain order(ex:high price to low price)
 	public void sorting() throws InterruptedException {
 		WebElement a = driver.findElement(sorting);
 		a.click();
@@ -66,6 +70,7 @@ public class Desktoppage {
 		driver.close();
 	}
 
+	// adding the products to wishlist
 	public void wish() {
 		driver.findElement(product1).click();
 		driver.findElement(wishcomponent).click();

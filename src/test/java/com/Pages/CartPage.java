@@ -28,7 +28,7 @@ public class CartPage {
 	By cancel = By.xpath("//*[@id=\"content\"]/form/div/table/tbody/tr/td[4]/div/span/button[2]/i");
 
 	public void url() { // url for launch the chrome
-		System.setProperty("webdriver.chrome.driver", "D:\\\\Selenium\\\\PROJECT-CTS\\\\driver\\\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\cts\\Selenium\\selenium_exmpls\\OPENCARTPROJECT\\driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
@@ -57,12 +57,14 @@ public class CartPage {
 
 	}
 
+	// adding the products into the cart
 	public void addcart() throws InterruptedException {
 		driver.findElement(addtocart).click();
 		Thread.sleep(2000);
 		driver.close();
 	}
 
+	// logging into the account and opening the cart
 	public void login() throws InterruptedException {
 		driver.findElement(Myaccount).click();
 		WebElement link = driver.findElement(Myaccount);
@@ -77,6 +79,7 @@ public class CartPage {
 		Thread.sleep(5000);
 	}
 
+	// checking the selected product is added into cart
 	public void assert1() throws InterruptedException {
 
 		String item1 = driver.findElement(item).getText();
@@ -84,12 +87,13 @@ public class CartPage {
 		// driver.navigate().to("https://demo.opencart.com/index.php?route=product/category&path=24");
 		// Thread.sleep(5000);
 		String product1 = driver.findElement(product).getText();
-		//Thread.sleep(5000);
+		// Thread.sleep(5000);
 		Assert.assertEquals(item1, product1);
 		driver.close();
 
 	}
 
+	// viewing the cart and selecting the quantity of product we want
 	public void incquan() throws InterruptedException {
 		driver.findElement(Quantity).clear();
 		driver.findElement(Quantity).sendKeys("2");
@@ -98,6 +102,7 @@ public class CartPage {
 		driver.close();
 	}
 
+	// removing the products in the cart
 	public void remove() {
 		driver.findElement(cancel).click();
 		driver.close();
